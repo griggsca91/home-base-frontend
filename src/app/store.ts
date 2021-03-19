@@ -1,9 +1,12 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
+import garageReducer from '../features/garage/garageSlice';
+
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
+    garage: garageReducer
   },
 });
 
