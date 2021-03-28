@@ -36,23 +36,6 @@ export function Garage() {
           color='primary'>
           Door Status: {doorState}
         </Text>
-
-
-        <button
-          className={styles.button}
-          aria-label="Open Door"
-          onClick={() => dispatch(doorOpen())}
-        >
-          +
-          </button>
-        <span className={styles.value}>{doorState}</span>
-        <button
-          className={styles.button}
-          aria-label="Close Door"
-          onClick={() => dispatch(doorClose())}
-        >
-          -
-          </button>
       </Card>
     </Box>
   );

@@ -11,12 +11,6 @@ function App() {
     <Box>
       <Tiles columns={[2, null, 4]}>
         <Garage />
-        <Garage />
-        <Garage />
-        <Garage />
-        <Garage />
-        <Garage />
-
       </Tiles>
 
     </Box>
