@@ -1,6 +1,11 @@
 import { Middleware } from "@reduxjs/toolkit"
 import { incomingSensorMessage } from "../garage/garageSlice"
 
+const websocketURL = () => {
+    console.log(process.env)
+    return process.env.REACT_APP_HOME_BASE_WEBSOCKET_URL ?? "ws://localhost:8080"
+}
+
 function socketMiddleware(): Middleware {
     console.log("socket middleware called")
     let socket: WebSocket | null = null
@@ -32,10 +37,8 @@ function socketMiddleware(): Middleware {
                     socket.close();
                 }
 
-                socket = new WebSocket("ws://localhost:8080");
-
-                // connect to the remote host
-                // websocket handlers
+                socket = new WebSocket(websocketURL());
+                
                 socket.onmessage = onMessage(store);
                 socket.onclose = onClose(store);
                 socket.onopen = onOpen(store);
