@@ -77,7 +77,7 @@ export const selectLastUpdated = (state: RootState) => {
         const d = dayjs(lastUpdated)
         return d.format("MMM D, YYYY h:mm:ss A")
     }
-    return "Unknown"
+    return undefined
 }
 
 
